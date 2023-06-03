@@ -19,6 +19,7 @@ const Appheader = () => {
                         <Link to="/home">Home</Link>
                         <Link to="/home">Contact</Link>
                         <Link to="/form">Form</Link>
+                        <Link to="/auto">Autocomplete</Link>
                         {/* <Button color="inherit">Contact</Button>
                         <Button color="inherit">Form</Button> */}
 
