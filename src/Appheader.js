@@ -21,6 +21,7 @@ const Appheader = () => {
                         <Link to="/form">Form</Link>
                         <Link to="/auto">Autocomplete</Link>
                         <Link to="/check">Checkbox</Link>
+                        <Link to="/popup">Popup</Link>
                         {/* <Button color="inherit">Contact</Button>
                         <Button color="inherit">Form</Button> */}
 

@@ -7,6 +7,7 @@ import Formpage from './Formpage';
 import Appheader from './Appheader';
 import Auto from './Auto';
 import Comcheckbox from './Comcheckbox';
+import Modalpopup from './Modalpopup';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path='/form' element={<Formpage></Formpage>}></Route>
       <Route path='/auto' element={<Auto></Auto>}></Route>
       <Route path='/check' element={<Comcheckbox></Comcheckbox>}></Route>
+      <Route path='/popup' element={<Modalpopup></Modalpopup>}></Route>
     </Routes>
     </BrowserRouter>
   );
