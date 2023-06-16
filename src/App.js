@@ -8,6 +8,7 @@ import Appheader from './Appheader';
 import Auto from './Auto';
 import Comcheckbox from './Comcheckbox';
 import Modalpopup from './Modalpopup';
+import Muitable from './MuiTable';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path='/auto' element={<Auto></Auto>}></Route>
       <Route path='/check' element={<Comcheckbox></Comcheckbox>}></Route>
       <Route path='/popup' element={<Modalpopup></Modalpopup>}></Route>
+      <Route path='/table' element={<Muitable></Muitable>}></Route>
     </Routes>
     </BrowserRouter>
   );
