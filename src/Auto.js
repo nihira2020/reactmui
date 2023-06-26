@@ -1,9 +1,10 @@
 import { Autocomplete, Button, Grid, Stack, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Auto = () => {
 
-    const[value,valuechange]=useState({ code: 'USA', name: 'USA', currency: 'USD' })
+    const [value, valuechange] = useState(null)
+    const [emplist, empchange] = useState([])
 
     const country = [
         { code: 'IND', name: 'India', currency: 'INR' },
@@ -12,15 +13,25 @@ const Auto = () => {
     ]
 
     const defprops = {
-        options: country,
-        getOptionLabel: (options) => options.code + " - " + options.name
+        options: emplist.map((option) => ({ id: option.id, name: option.name })),
+        getOptionLabel: (options) => options.name
     }
     const getdata = (data) => {
-        console.log(data.name);
+        console.log(data);
     }
-    const asigndata=()=>{
+    const asigndata = () => {
         valuechange({ code: 'SG', name: 'Singapore', currency: 'SGD' })
     }
+    useEffect(() => {
+        fetch('http://localhost:8000/employee').then(resp => {
+            return resp.json();
+        }).then(res => {
+            empchange(res)
+        }).catch(e => {
+            console.log(e.message);
+        })
+
+    }, [])
     return (
         <div>
             <Grid container spacing={0} direction="column" alignItems="center">
@@ -38,9 +49,8 @@ const Auto = () => {
 
                     </Autocomplete>
 
-                    <Autocomplete
+                    {/* <Autocomplete
                         {...defprops}
-                        //options={country}
                         renderInput={(params) => (
                             <TextField {...params} label="Country" variant="filled"></TextField>
                         )}
@@ -58,7 +68,7 @@ const Auto = () => {
                         onChange={(event, value) => getdata(value)}
                     >
 
-                    </Autocomplete>
+                    </Autocomplete> */}
                     <Button onClick={asigndata} variant="contained">Assign data</Button>
                 </Stack>
             </Grid>
