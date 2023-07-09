@@ -11,6 +11,7 @@ import Modalpopup from './Modalpopup';
 import Muitable from './MuiTable';
 import Floatingbutton from './Flatingbutton';
 import Ratingctl from './Ratingctl';
+import Alertpage from './AlertPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path='/table' element={<Muitable></Muitable>}></Route>
       <Route path='/fab' element={<Floatingbutton></Floatingbutton>}></Route>
       <Route path='/rating' element={<Ratingctl></Ratingctl>}></Route>
+      <Route path='/alert' element={<Alertpage></Alertpage>}></Route>
     </Routes>
     </BrowserRouter>
   );
